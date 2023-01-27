@@ -1,27 +1,60 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getUserData } from "../../data/call";
+import {
+  getUserData,
+  getUserActivity,
+  getUserAverageSession,
+  getUserPerformance,
+} from "../../data/call";
+import ActivityChart from "../../components/ActivityChart";
+import AverageSessionChart from "../../components/AverageSessionChart";
+import PerformanceChart from "../../components/PerformanceChart";
+import RadialChart from "../../components/RadialChart";
 
 function Profile() {
-  const [user, setUser] = useState({});
-  const { userId } = useParams();
+  const [userData, setUserData] = useState({});
+  const [userActivity, setUserActivity] = useState({});
+  const [userAverageSession, setUserAverageSession] = useState({});
+  const [userPerformance, setUserPerformance] = useState({});
+  const { id } = useParams();
 
   useEffect(() => {
-    async function getUserDataLoad(userId) {
-      const user = await getUserData(userId);
-      setUser(user);
+    async function getUserDataLoad(id) {
+      const userData = await getUserData(id);
+      const userActivity = await getUserActivity(id);
+      const userAverageSession = await getUserAverageSession(id);
+      const userPerformance = await getUserPerformance(id);
+      setUserData(userData.data);
+      setUserActivity(userActivity.data);
+      setUserAverageSession(userAverageSession.data);
+      setUserPerformance(userPerformance.data);
     }
 
-    getUserDataLoad(userId);
-  }, [userId]);
+    getUserDataLoad(id);
+  }, [id]);
 
-  return (
-    <div className="profile">
-      <div className="profile__block-title">
-        <h1></h1>
+  if (userData.id === undefined) {
+  } else {
+    const userInfos = userData.userInfos;
+    return (
+      <div className="profile">
+        <div className="profile__block-title">
+          <h1>
+            Bonjour <span className="profile__name">{userInfos.firstName}</span>
+          </h1>
+          <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+        </div>
+        <div className="profile__block-charts">
+          <ActivityChart props={userActivity.sessions}/>
+          <div className="profile--block-bottom-chart">
+            <AverageSessionChart props={userAverageSession.sessions}/>
+            <PerformanceChart props={userPerformance}/>
+            <RadialChart props={userData}/>
+          </div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Profile;
