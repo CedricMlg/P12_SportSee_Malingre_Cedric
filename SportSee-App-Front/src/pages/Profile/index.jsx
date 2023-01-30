@@ -5,11 +5,15 @@ import {
   getUserActivity,
   getUserAverageSession,
   getUserPerformance,
+  getUserDataMock,
+  getUserActivityMock,
+  getUserAverageSessionMock,
+  getUserPerformanceMock,
 } from "../../data/call";
 import ActivityChart from "../../components/ActivityChart";
 import AverageSessionChart from "../../components/AverageSessionChart";
 import PerformanceChart from "../../components/PerformanceChart";
-import RadialChart from "../../components/RadialChart";
+import ScoreChart from "../../components/ScoreChart";
 
 function Profile() {
   const [userData, setUserData] = useState({});
@@ -18,17 +22,29 @@ function Profile() {
   const [userPerformance, setUserPerformance] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
+  const mock = true;
 
   useEffect(() => {
     async function getUserDataLoad(id) {
-      const userData = await getUserData(id);
-      const userActivity = await getUserActivity(id);
-      const userAverageSession = await getUserAverageSession(id);
-      const userPerformance = await getUserPerformance(id);
-      setUserData(userData.data);
-      setUserActivity(userActivity.data);
-      setUserAverageSession(userAverageSession.data);
-      setUserPerformance(userPerformance.data);
+      if (mock) {
+        const userData = await getUserDataMock(id);
+        const userActivity = await getUserActivityMock(id);
+        const userAverageSession = await getUserAverageSessionMock(id);
+        const userPerformance = await getUserPerformanceMock(id);
+        setUserData(userData[0]);
+        setUserActivity(userActivity[0]);
+        setUserAverageSession(userAverageSession[0]);
+        setUserPerformance(userPerformance[0]);
+      } else {
+        const userData = await getUserData(id);
+        const userActivity = await getUserActivity(id);
+        const userAverageSession = await getUserAverageSession(id);
+        const userPerformance = await getUserPerformance(id);
+        setUserData(userData.data);
+        setUserActivity(userActivity.data);
+        setUserAverageSession(userAverageSession.data);
+        setUserPerformance(userPerformance.data);
+      }
       setIsLoading(false);
     }
 
@@ -45,7 +61,9 @@ function Profile() {
           <div className="profile__block-title">
             <h1>
               Bonjour{" "}
-              <span className="profile__name">{userData.userInfos.firstName}</span>
+              <span className="profile__name">
+                {userData.userInfos.firstName}
+              </span>
             </h1>
             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
           </div>
@@ -54,7 +72,7 @@ function Profile() {
             <div className="profile--block-bottom-chart">
               <AverageSessionChart props={userAverageSession.sessions} />
               <PerformanceChart props={userPerformance} />
-              <RadialChart props={userData} />
+              <ScoreChart props={userData} />
             </div>
           </div>
         </>
