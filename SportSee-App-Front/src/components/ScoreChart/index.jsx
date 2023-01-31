@@ -1,12 +1,29 @@
 import React from "react";
-import { RadialBarChart, RadialBar, Legend } from "recharts";
+import { PieChart, Pie, Cell } from "recharts";
 
 function ScoreChart(data) {
-  // console.log(data.props);
+  const percent = data.props.todayScore * 100;
+  const missingPercent = 100 - percent;
+  const score = [{ value: percent }, { value: missingPercent }];
   return (
     <div className="radial-chart">
       <p>Score</p>
-      <p>{data.props.todayScore * 100}% de votre objectif</p>
+      <PieChart width={800} height={400}>
+        <Pie
+          data={score}
+          cx={120}
+          cy={200}
+          innerRadius={60}
+          outerRadius={80}
+          fill="white"
+          dataKey="value"
+        >
+          <Cell fill="red" />
+        </Pie>
+      </PieChart>
+      <p>
+        {percent}% <span>de votre objectif</span>
+      </p>
     </div>
   );
 }
