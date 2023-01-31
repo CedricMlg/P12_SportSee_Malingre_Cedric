@@ -75,6 +75,49 @@ function Profile() {
               <ScoreChart props={userData} />
             </div>
           </div>
+          <div className="profile__block-keyData">
+            <div className="profile__block-data">
+              <img src="" alt="Flame icon" />
+              <div className="profile__block-text">
+                {" "}
+                <p className="profile__data">
+                  {new Intl.NumberFormat("en-IN", {
+                    maximumSignificantDigits: 3,
+                  }).format(userData.keyData.calorieCount)}
+                  kCal
+                </p>
+                <p className="profile__text">Calories</p>
+              </div>
+            </div>
+            <div className="profile__block-data">
+              <img src="" alt="Chicken wing icon" />
+              <div className="profile__block-text">
+                {" "}
+                <p className="profile__data">
+                  {userData.keyData.proteinCount}g
+                </p>
+                <p className="profile__text">Protéines</p>
+              </div>
+            </div>
+            <div className="profile__block-data">
+              <img src="" alt="Apple icon" />
+              <div className="profile__block-text">
+                {" "}
+                <p className="profile__data">
+                  {userData.keyData.carbohydrateCount}g
+                </p>
+                <p className="profile__text">Glucides</p>
+              </div>
+            </div>
+            <div className="profile__block-data">
+              <img src="" alt="Hamburger icon" />
+              <div className="profile__block-text">
+                {" "}
+                <p className="profile__data">{userData.keyData.lipidCount}g</p>
+                <p className="profile__text">Lipides</p>
+              </div>
+            </div>
+          </div>
         </>
       )}
     </div>
