@@ -3,7 +3,7 @@ import logo from "../../assets/logo.png";
 
 function Header() {
   return (
-    <div className="header">
+    <header className="header">
       <div className="header__block-logo">
         <img src={logo} alt="Logo SportSee" />
       </div>
@@ -15,7 +15,7 @@ function Header() {
           <li>Communauté</li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 }
 

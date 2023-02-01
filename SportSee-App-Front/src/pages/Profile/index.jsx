@@ -79,46 +79,46 @@ function Profile() {
               <ScoreChart props={userData} />
             </div>
           </div>
-          <div className="profile__block-keyData">
-            <div className="profile__block-data">
+          <div className="profile__block-cards">
+            <div className="card">
               <img src={energy} alt="energy icon" />
-              <div className="profile__block-text">
+              <div className="card__block-text">
                 {" "}
-                <p className="profile__data">
+                <p className="card__data">
                   {new Intl.NumberFormat("en-IN", {
                     maximumSignificantDigits: 3,
                   }).format(userData.keyData.calorieCount)}
                   kCal
                 </p>
-                <p className="profile__text">Calories</p>
+                <p className="card__text">Calories</p>
               </div>
             </div>
-            <div className="profile__block-data">
+            <div className="card">
               <img src={chicken} alt="chicken wing icon" />
-              <div className="profile__block-text">
+              <div className="card__block-text">
                 {" "}
-                <p className="profile__data">
+                <p className="card__data">
                   {userData.keyData.proteinCount}g
                 </p>
-                <p className="profile__text">Protéines</p>
+                <p className="card__text">Protéines</p>
               </div>
             </div>
-            <div className="profile__block-data">
+            <div className="card">
               <img src={apple} alt="apple icon" />
-              <div className="profile__block-text">
+              <div className="card__block-text">
                 {" "}
-                <p className="profile__data">
+                <p className="card__data">
                   {userData.keyData.carbohydrateCount}g
                 </p>
-                <p className="profile__text">Glucides</p>
+                <p className="card__text">Glucides</p>
               </div>
             </div>
-            <div className="profile__block-data">
+            <div className="card">
               <img src={hamburger} alt="hamburger icon" />
-              <div className="profile__block-text">
+              <div className="card__block-text">
                 {" "}
-                <p className="profile__data">{userData.keyData.lipidCount}g</p>
-                <p className="profile__text">Lipides</p>
+                <p className="card__data">{userData.keyData.lipidCount}g</p>
+                <p className="card__text">Lipides</p>
               </div>
             </div>
           </div>
