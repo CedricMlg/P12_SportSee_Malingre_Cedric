@@ -14,6 +14,10 @@ import ActivityChart from "../../components/ActivityChart";
 import AverageSessionChart from "../../components/AverageSessionChart";
 import PerformanceChart from "../../components/PerformanceChart";
 import ScoreChart from "../../components/ScoreChart";
+import energy from "../../assets/energy.svg"
+import chicken from "../../assets/chicken.svg"
+import apple from "../../assets/apple.svg"
+import hamburger from "../../assets/cheeseburger.svg"
 
 function Profile() {
   const [userData, setUserData] = useState({});
@@ -77,7 +81,7 @@ function Profile() {
           </div>
           <div className="profile__block-keyData">
             <div className="profile__block-data">
-              <img src="" alt="Flame icon" />
+              <img src={energy} alt="energy icon" />
               <div className="profile__block-text">
                 {" "}
                 <p className="profile__data">
@@ -90,7 +94,7 @@ function Profile() {
               </div>
             </div>
             <div className="profile__block-data">
-              <img src="" alt="Chicken wing icon" />
+              <img src={chicken} alt="chicken wing icon" />
               <div className="profile__block-text">
                 {" "}
                 <p className="profile__data">
@@ -100,7 +104,7 @@ function Profile() {
               </div>
             </div>
             <div className="profile__block-data">
-              <img src="" alt="Apple icon" />
+              <img src={apple} alt="apple icon" />
               <div className="profile__block-text">
                 {" "}
                 <p className="profile__data">
@@ -110,7 +114,7 @@ function Profile() {
               </div>
             </div>
             <div className="profile__block-data">
-              <img src="" alt="Hamburger icon" />
+              <img src={hamburger} alt="hamburger icon" />
               <div className="profile__block-text">
                 {" "}
                 <p className="profile__data">{userData.keyData.lipidCount}g</p>
