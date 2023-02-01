@@ -1,5 +1,5 @@
 import React from "react";
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 function ScoreChart(data) {
   const userData = data.props;
@@ -13,19 +13,21 @@ function ScoreChart(data) {
   return (
     <div className="radial-chart">
       <p>Score</p>
-      <PieChart width={800} height={400}>
-        <Pie
-          data={score}
-          cx={120}
-          cy={200}
-          innerRadius={60}
-          outerRadius={80}
-          fill="white"
-          dataKey="value"
-        >
-          <Cell fill="red" />
-        </Pie>
-      </PieChart>
+      <ResponsiveContainer>
+        <PieChart>
+          <Pie
+            data={score}
+            cx={120}
+            cy={200}
+            innerRadius={60}
+            outerRadius={80}
+            fill="white"
+            dataKey="value"
+          >
+            <Cell fill="red" />
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
       <p>
         {percent}% <span>de votre objectif</span>
       </p>

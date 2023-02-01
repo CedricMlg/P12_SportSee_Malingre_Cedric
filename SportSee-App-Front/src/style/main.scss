@@ -1,6 +1,10 @@
 @import "./abstracts/variables";
 @import "./base/base";
 @import "./base/typography";
+@import "./components/activityChart";
+@import "./components/averageSessionChart";
 @import "./components/btnnav";
+@import "./components/performanceChart";
+@import "./components/scoreChart";
 @import "./layout/header";
 @import "./layout/navbar";
