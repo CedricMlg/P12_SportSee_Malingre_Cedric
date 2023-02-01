@@ -14,10 +14,10 @@ import ActivityChart from "../../components/ActivityChart";
 import AverageSessionChart from "../../components/AverageSessionChart";
 import PerformanceChart from "../../components/PerformanceChart";
 import ScoreChart from "../../components/ScoreChart";
-import energy from "../../assets/energy.svg"
-import chicken from "../../assets/chicken.svg"
-import apple from "../../assets/apple.svg"
-import hamburger from "../../assets/cheeseburger.svg"
+import energy from "../../assets/calories-icon.svg"
+import chicken from "../../assets/protein-icon.svg"
+import apple from "../../assets/carbs-icon.svg"
+import hamburger from "../../assets/fat-icon.svg"
 
 function Profile() {
   const [userData, setUserData] = useState({});

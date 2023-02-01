@@ -25,3 +25,49 @@
     color: white;
   }
 }
+
+.profile {
+  &__block {
+    &-title {
+      & h1 {
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 24px;
+      }
+      & p {
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+  }
+  &__name {
+    color: $primary-color;
+  }
+}
+
+.card {
+  &__block {
+    &-text {
+      & p {
+        font-family: $main-font;
+        font-style: normal;
+        line-height: 24px;
+      }
+    }
+  }
+  &__data {
+    color: $secondary-color;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  &__text {
+    color: $third-color;
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
