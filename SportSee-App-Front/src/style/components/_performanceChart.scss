@@ -2,5 +2,10 @@
   &-chart {
     width: 258px;
     height: 263px;
+    background-color: $secondary-color;
+    border-radius: 5px;
+    & tspan {
+      color: black;
+    }
   }
 }

@@ -6,7 +6,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
@@ -40,7 +39,7 @@ function ActivityChart(data) {
           </div>
         </div>
       </div>
-      <ResponsiveContainer width="100%" height="80%">
+      <ResponsiveContainer width="100%" height="85%">
         <BarChart data={dataChart}>
           <CartesianGrid
             strokeDasharray="2 2"

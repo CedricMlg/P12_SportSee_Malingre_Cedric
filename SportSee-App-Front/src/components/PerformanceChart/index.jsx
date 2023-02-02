@@ -21,15 +21,13 @@ function PerformanceChart(data) {
   return (
     <div className="radar-chart">
       <ResponsiveContainer>
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={performance}>
-          <PolarGrid />
+        <RadarChart outerRadius="80%" data={performance}>
+          <PolarGrid stroke="white"/>
           <PolarAngleAxis dataKey="kind" />
-          <PolarRadiusAxis />
           <Radar
             dataKey="value"
-            stroke="#8884d8"
-            fill="#8884d8"
-            fillOpacity={0.6}
+            fill="var(--primary-color)"
+            fillOpacity={0.7}
           />
         </RadarChart>
       </ResponsiveContainer>
