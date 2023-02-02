@@ -11,20 +11,81 @@ import {
 } from "recharts";
 
 function ActivityChart(data) {
+  const dataChart = [];
+  for (let i = 0; i < data.props.length; i++) {
+    dataChart.push({
+      name: i + 1,
+      kg: data.props[i].kilogram,
+      kCal: data.props[i].calories,
+    });
+  }
   return (
     <div className="activity-chart">
-      <p>Activité quotidienne</p>
-      <ResponsiveContainer>
-        <BarChart data={data.props}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="day" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="kilogram" fill="#82ca9d" />
-          <Bar dataKey="calories" fill="#8884d8" />
+      <div className="activity-chart__text">
+        <p>Activité quotidienne</p>
+        <div className="activity-chart__legend">
+          <div>
+            <div
+              className="activity-chart__legend-color"
+              style={{ backgroundColor: "var(--secondary-color)" }}
+            ></div>
+            <p>Poids (kg)</p>
+          </div>
+          <div>
+            <div
+              className="activity-chart__legend-color"
+              style={{ backgroundColor: "var(--primary-color)" }}
+            ></div>
+            <p>Calories brpulées (kCal)</p>
+          </div>
+        </div>
+      </div>
+      <ResponsiveContainer width="100%" height="80%">
+        <BarChart data={dataChart}>
+          <CartesianGrid
+            strokeDasharray="2 2"
+            horizontal={true}
+            vertical={false}
+          />
+          <XAxis dataKey="name" tickLine={false} axisLine={false} />
+          <YAxis orientation="right" tickLine={false} axisLine={false} />
+          <Tooltip
+            animationEasing="ease-out"
+            content={<CustomTooltip payload={dataChart} />}
+            offset={40}
+            wrapperStyle={{ outline: "none" }}
+          />
+          <Bar
+            dataKey="kg"
+            fill="var(--secondary-color)"
+            radius={[10, 10, 0, 0]}
+            barSize={10}
+          />
+          <Bar
+            dataKey="kCal"
+            fill="var(--primary-color)"
+            radius={[10, 10, 0, 0]}
+            barSize={10}
+          />
         </BarChart>
       </ResponsiveContainer>
+    </div>
+  );
+}
+
+function CustomTooltip(data) {
+  if (data.payload[0] === undefined) {
+    return null;
+  }
+  const tooltipData = data.payload[0].payload;
+
+  return (
+    <div className="activity-chart__tooltip">
+      <p className="activity-chart__tooltip-text"> {`${tooltipData.kg}kg`}</p>
+      <p className="activity-chart__tooltip-text">
+        {" "}
+        {`${tooltipData.kCal}Kcal`}
+      </p>
     </div>
   );
 }

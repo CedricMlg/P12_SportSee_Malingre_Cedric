@@ -62,6 +62,37 @@
   }
 }
 
+.activity {
+  &-chart {
+    &__text {
+      & p {
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 24px;
+        color: $fourth-color;
+      }
+    }
+    &__legend {
+      & p {
+        font-size: 14px;
+        color: $third-color;
+      }
+    }
+    &__tooltip {
+      &-text {
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 7px;
+        line-height: 24px;
+        color: white;
+      }
+    }
+  }
+}
+
 .card {
   &__block {
     &-text {

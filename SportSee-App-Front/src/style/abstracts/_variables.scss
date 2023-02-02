@@ -1,4 +1,10 @@
 $primary-color: #ff0000;
 $secondary-color: #282d30;
 $third-color: #74798c;
+$fourth-color: #20253A;
 $main-font: "Roboto", sans-serif;
+
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+}
