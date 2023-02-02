@@ -6,11 +6,11 @@ body {
 
 #root {
   display: grid;
-  grid-template-columns: fit-content(100%);
-  grid-template-rows: auto;
+  grid-template-columns: 117px 1fr;
+  grid-template-rows: fit-content(100%);
   grid-template-areas:
-  "header header"
-  "navbar profile";
+    "header header"
+    "navbar main";
 }
 
 .header {
@@ -20,5 +20,8 @@ body {
   grid-area: navbar;
 }
 .profile {
-  grid-area: profile;
+  grid-area: main;
+}
+.home {
+  grid-area: main;
 }

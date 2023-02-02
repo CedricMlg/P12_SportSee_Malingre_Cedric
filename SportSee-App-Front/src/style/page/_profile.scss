@@ -41,17 +41,17 @@
 }
 
 @media (max-width: 1400px) {
-    .profile {
+  .profile {
     grid-template-areas:
-    "title"
-    "charts"
-    "cards";
+      "title"
+      "charts"
+      "cards";
     &__block {
-        &-cards {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-        }
+      &-cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
       }
     }
+  }
 }
