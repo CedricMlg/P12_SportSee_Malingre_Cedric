@@ -11,7 +11,7 @@ function ScoreChart(data) {
   const missingPercent = 100 - percent;
   const score = [{ value: percent }, { value: missingPercent }];
   return (
-    <div className="radial-chart">
+    <div className="pie-chart">
       <p>Score</p>
       <ResponsiveContainer>
         <PieChart>
