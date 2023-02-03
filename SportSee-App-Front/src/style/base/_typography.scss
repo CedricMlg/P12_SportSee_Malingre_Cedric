@@ -93,6 +93,38 @@
   }
 }
 
+.line {
+  &-chart {
+    &__text {
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 24px;
+      color: white;
+      opacity: 0.5;
+    }
+    &__tooltip {
+      &-text {
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 8px;
+        line-height: 24px;
+      }
+    }
+    & text {
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 24px;
+      fill: white;
+      opacity: 0.5;
+    }
+  }
+}
+
 .radar {
   &-chart {
     & text {

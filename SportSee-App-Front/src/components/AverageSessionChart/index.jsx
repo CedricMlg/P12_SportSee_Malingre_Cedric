@@ -1,25 +1,72 @@
 import React from "react";
 import {
-  LineChart,
-  Line,
+  Area,
+  AreaChart,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
 
 function AverageSessionChart(data) {
+  const dataChart = [];
+  const days = ["L", "M", "M", "J", "V", "S", "D"];
+  for (let i = 0; i < data.props.length; i++) {
+    dataChart.push({
+      name: days[data.props[i].day - 1],
+      min: data.props[i].sessionLength,
+    });
+  }
   return (
     <div className="line-chart">
-      <p>Durée moyenne des sessions</p>
-      <ResponsiveContainer>
-        <LineChart data={data.props}>
-          <XAxis />
-          <YAxis dataKey="day" />
-          <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
-          <Line type="monotone" dataKey="sessionLength" stroke="#82ca9d" />
-        </LineChart>
+      <p className="line-chart__text">Durée moyenne des sessions</p>
+      <ResponsiveContainer width="100%" height="90%">
+        <AreaChart data={dataChart}>
+          <defs>
+            <linearGradient id="colorMin" x1="0" y1="0" x2="0" y2="1">
+              <stop
+                offset="0%"
+                stopColor="var(--fifth-color)"
+                stopOpacity={0.2}
+              />
+              <stop
+                offset="100%"
+                stopColor="var(--fifth-color)"
+                stopOpacity={0}
+              />
+            </linearGradient>
+          </defs>
+          <XAxis dataKey="name" axisLine={false} tickLine={false} />
+          <YAxis dataKey="min" hide />
+          <Area
+            type="monotone"
+            dataKey="min"
+            stroke="white"
+            strokeWidth={2}
+            fillOpacity={1}
+            fill="url(#colorMin)"
+          />
+
+          <Tooltip
+            animationEasing="ease-out"
+            content={<CustomTooltip payload={dataChart} />}
+            wrapperStyle={{ outline: "none" }}
+          />
+        </AreaChart>
       </ResponsiveContainer>
+    </div>
+  );
+}
+
+function CustomTooltip(data) {
+  if (data.payload[0] === undefined) {
+    return null;
+  }
+  const tooltipData = data.payload[0].payload;
+
+  return (
+    <div className="line-chart__tooltip">
+      <p className="line-chart__tooltip-text"> {`${tooltipData.min} min`}</p>
     </div>
   );
 }

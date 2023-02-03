@@ -1,8 +1,26 @@
 .line {
   &-chart {
+    position: relative;
     width: 258px;
     height: 263px;
     background-color: $primary-color;
     border-radius: 5px;
+    &__text {
+      position: absolute;
+      margin: 0;
+      width: 60%;
+      top: 20px;
+      left: 30px;
+    }
+    &__tooltip {
+      background-color: white;
+      &-text {
+        margin: 0;
+        padding: 2px 8px;
+      }
+    }
+    & .rechart {
+      margin-top: 25px;
+    }
   }
 }
