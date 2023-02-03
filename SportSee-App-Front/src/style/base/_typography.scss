@@ -93,6 +93,45 @@
   }
 }
 
+.radar {
+  &-chart {
+    & text {
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 24px;
+      fill: white;
+    }
+  }
+}
+
+.pie {
+  &-chart {
+    & p {
+      font-family: $main-font;
+      font-style: normal;
+    }
+    &__text {
+      color: $fourth-color;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 24px;
+    }
+    &__percentage {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 26px;
+      color: $secondary-color;
+      & span {
+        font-weight: 500;
+        font-size: 16px;
+        color: $third-color;
+      }
+    }
+  }
+}
+
 .card {
   &__block {
     &-text {

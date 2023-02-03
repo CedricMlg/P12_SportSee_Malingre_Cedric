@@ -20,9 +20,9 @@ function PerformanceChart(data) {
   );
   return (
     <div className="radar-chart">
-      <ResponsiveContainer>
-        <RadarChart outerRadius="80%" data={performance}>
-          <PolarGrid stroke="white"/>
+      <ResponsiveContainer width="100%" height="100%">
+        <RadarChart outerRadius="58%" data={performance}>
+          <PolarGrid stroke="white" radialLines={false} />
           <PolarAngleAxis dataKey="kind" />
           <Radar
             dataKey="value"

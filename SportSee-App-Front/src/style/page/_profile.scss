@@ -35,6 +35,8 @@
       &-chart {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        max-width: 845px;
       }
     }
   }

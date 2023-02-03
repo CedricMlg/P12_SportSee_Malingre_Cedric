@@ -12,21 +12,23 @@ function ScoreChart(data) {
   const score = [{ value: percent }, { value: missingPercent }];
   return (
     <div className="pie-chart">
-      <p>Score</p>
+      <p className="pie-chart__text">Score</p>
       <ResponsiveContainer>
         <PieChart>
           <Pie
             data={score}
-            innerRadius={60}
+            innerRadius={69}
             outerRadius={80}
-            fill="white"
+            fill="transparent"
             dataKey="value"
+            startAngle={90}
+            endAngle={450}
           >
-            <Cell fill="red" />
+            <Cell cornerRadius={10} fill="var(--primary-color)" />
           </Pie>
         </PieChart>
       </ResponsiveContainer>
-      <p>
+      <p className="pie-chart__percentage">
         {percent}% <span>de votre objectif</span>
       </p>
     </div>

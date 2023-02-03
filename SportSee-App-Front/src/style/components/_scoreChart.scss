@@ -1,8 +1,27 @@
 .pie {
   &-chart {
+    position: relative;
     width: 258px;
     height: 263px;
     background-color: #FBFBFB;
     border-radius: 5px;
+    & p {
+      margin: 0;
+      position: absolute;
+    }
+    &__text {
+      top: 30px;
+      left: 44px;
+    }
+    &__percentage {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -49.7%);
+      width: 24%;
+      text-align: center;
+      background-color: white;
+      padding: 26.3px 39px 26.3px 39px;
+      border-radius: 100px;
+    }
   }
 }
