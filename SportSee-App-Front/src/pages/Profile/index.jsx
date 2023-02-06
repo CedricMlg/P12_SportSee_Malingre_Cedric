@@ -25,12 +25,11 @@ function Profile() {
   const [userAverageSession, setUserAverageSession] = useState({});
   const [userPerformance, setUserPerformance] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const { id } = useParams();
-  const mock = true;
+  const { id } = useParams();;
 
   useEffect(() => {
     async function getUserDataLoad(id) {
-      if (mock) {
+      if (import.meta.env.VITE_APP_USEMOCK === "true") {
         const userData = await getUserDataMock(id);
         const userActivity = await getUserActivityMock(id);
         const userAverageSession = await getUserAverageSessionMock(id);
@@ -57,7 +56,6 @@ function Profile() {
 
   return (
     <div className="profile">
-      {" "}
       {isLoading ? (
         <p>Chargement des données</p>
       ) : (

@@ -28,6 +28,5 @@
     "vite": "^4.0.0"
   },
   "main": "index.js",
-  "author": "CedricMlg <malingre.cedric@gmail.com>",
-  "license": "MIT"
+  "author": "CedricMlg <malingre.cedric@gmail.com>"
 }

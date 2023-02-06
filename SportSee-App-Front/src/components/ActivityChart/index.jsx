@@ -47,7 +47,8 @@ function ActivityChart(data) {
             vertical={false}
           />
           <XAxis dataKey="name" tickLine={false} axisLine={false} />
-          <YAxis orientation="right" tickLine={false} axisLine={false} />
+          <YAxis dataKey="kg" orientation="right" tickLine={false} axisLine={false} />
+          <YAxis dataKey="kCal" orientation="left" />
           <Tooltip
             animationEasing="ease-out"
             content={<CustomTooltip payload={dataChart} />}
