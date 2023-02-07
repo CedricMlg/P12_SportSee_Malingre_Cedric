@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-  getUserData,
-  getUserActivity,
-  getUserAverageSession,
-  getUserPerformance,
-  getUserDataMock,
-  getUserActivityMock,
-  getUserAverageSessionMock,
-  getUserPerformanceMock,
-} from "../../data/call";
+import AppData from "../../services";
 import ActivityChart from "../../components/ActivityChart";
 import AverageSessionChart from "../../components/AverageSessionChart";
 import PerformanceChart from "../../components/PerformanceChart";
@@ -25,24 +16,26 @@ function Profile() {
   const [userAverageSession, setUserAverageSession] = useState({});
   const [userPerformance, setUserPerformance] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const { id } = useParams();;
+  const { id } = useParams();
 
   useEffect(() => {
     async function getUserDataLoad(id) {
       if (import.meta.env.VITE_APP_USEMOCK === "true") {
-        const userData = await getUserDataMock(id);
-        const userActivity = await getUserActivityMock(id);
-        const userAverageSession = await getUserAverageSessionMock(id);
-        const userPerformance = await getUserPerformanceMock(id);
+        const userData = new AppData().getUserDataMock(id);
+        const userActivity = new AppData().getUserActivityMock(id);
+        const userAverageSession = new AppData().getUserAverageSessionMock(id);
+        const userPerformance = new AppData().getUserPerformanceMock(id);
         setUserData(userData[0]);
         setUserActivity(userActivity[0]);
         setUserAverageSession(userAverageSession[0]);
         setUserPerformance(userPerformance[0]);
       } else {
-        const userData = await getUserData(id);
-        const userActivity = await getUserActivity(id);
-        const userAverageSession = await getUserAverageSession(id);
-        const userPerformance = await getUserPerformance(id);
+        const userData = await new AppData().getUserData(id);
+        const userActivity = await new AppData().getUserActivity(id);
+        const userAverageSession = await new AppData().getUserAverageSession(
+          id
+        );
+        const userPerformance = await new AppData().getUserPerformance(id);
         setUserData(userData.data);
         setUserActivity(userActivity.data);
         setUserAverageSession(userAverageSession.data);

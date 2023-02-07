@@ -4,24 +4,16 @@ import {
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
+import FormatChartData from "../../services/FormatChartData";
 
 function PerformanceChart(data) {
-  const kind = data.props.kind;
-  const dataPerf = data.props.data;
-  const performance = [];
-  dataPerf.map((perf) =>
-    performance.push({
-      value: perf.value,
-      kind: perf.kind.toString().replace(perf.kind, kind[perf.kind]),
-    })
-  );
+  const dataChart = new FormatChartData().PerformanceFormattedData(data);
   return (
     <div className="radar-chart">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart outerRadius="58%" data={performance}>
+        <RadarChart outerRadius="58%" data={dataChart}>
           <PolarGrid stroke="white" radialLines={false} />
           <PolarAngleAxis dataKey="kind" />
           <Radar

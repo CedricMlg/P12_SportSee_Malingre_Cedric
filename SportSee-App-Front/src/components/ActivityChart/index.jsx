@@ -8,16 +8,10 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import FormatChartData from "../../services/FormatChartData";
 
 function ActivityChart(data) {
-  const dataChart = [];
-  for (let i = 0; i < data.props.length; i++) {
-    dataChart.push({
-      name: i + 1,
-      kg: data.props[i].kilogram,
-      kCal: data.props[i].calories,
-    });
-  }
+  const dataChart = new FormatChartData().ActivityFormattedData(data);
   return (
     <div className="activity-chart">
       <div className="activity-chart__text">
@@ -47,7 +41,12 @@ function ActivityChart(data) {
             vertical={false}
           />
           <XAxis dataKey="name" tickLine={false} axisLine={false} />
-          <YAxis dataKey="kg" orientation="right" tickLine={false} axisLine={false} />
+          <YAxis
+            dataKey="kg"
+            orientation="right"
+            tickLine={false}
+            axisLine={false}
+          />
           <YAxis dataKey="kCal" orientation="left" />
           <Tooltip
             animationEasing="ease-out"

@@ -7,16 +7,10 @@ import {
   YAxis,
   ResponsiveContainer,
 } from "recharts";
+import FormatChartData from "../../services/FormatChartData";
 
 function AverageSessionChart(data) {
-  const dataChart = [];
-  const days = ["L", "M", "M", "J", "V", "S", "D"];
-  for (let i = 0; i < data.props.length; i++) {
-    dataChart.push({
-      name: days[data.props[i].day - 1],
-      min: data.props[i].sessionLength,
-    });
-  }
+  const dataChart = new FormatChartData().AverageSessionFormattedData(data);
   return (
     <div className="line-chart">
       <p className="line-chart__text">Durée moyenne des sessions</p>
