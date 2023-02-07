@@ -42,12 +42,13 @@ function ActivityChart(data) {
           />
           <XAxis dataKey="name" tickLine={false} axisLine={false} />
           <YAxis
+            yAxisId="right"
             dataKey="kg"
             orientation="right"
             tickLine={false}
             axisLine={false}
           />
-          <YAxis dataKey="kCal" orientation="left" />
+          <YAxis yAxisId="left" dataKey="kCal" orientation="left" hide />
           <Tooltip
             animationEasing="ease-out"
             content={<CustomTooltip payload={dataChart} />}
@@ -55,12 +56,14 @@ function ActivityChart(data) {
             wrapperStyle={{ outline: "none" }}
           />
           <Bar
+            yAxisId="right"
             dataKey="kg"
             fill="var(--secondary-color)"
             radius={[10, 10, 0, 0]}
             barSize={10}
           />
           <Bar
+            yAxisId="left"
             dataKey="kCal"
             fill="var(--primary-color)"
             radius={[10, 10, 0, 0]}
