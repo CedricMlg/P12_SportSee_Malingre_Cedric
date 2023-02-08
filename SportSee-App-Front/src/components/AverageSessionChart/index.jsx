@@ -18,25 +18,26 @@ function AverageSessionChart(data) {
         <LineChart data={dataChart}>
           <defs>
             <linearGradient id="lineColor" x1="0" y1="1" x2="1" y2="1">
-              <stop
-                offset="20%"
-                stopColor="#FFFFFF"
-                stopOpacity={0.4}
-              />
-              <stop
-                offset="100%"
-                stopColor="#FFFFFF"
-                stopOpacity={0.8}
-              />
+              <stop offset="20%" stopColor="#FFFFFF" stopOpacity={0.4} />
+              <stop offset="100%" stopColor="#FFFFFF" stopOpacity={0.8} />
             </linearGradient>
           </defs>
           <XAxis dataKey="name" axisLine={false} tickLine={false} />
           <YAxis dataKey="min" hide />
-          <Line type="monotone" dataKey="min" strokeWidth={2} stroke="url(#lineColor)" dot={false}/>
+          <Line
+            type="monotone"
+            dataKey="min"
+            strokeWidth={2}
+            stroke="url(#lineColor)"
+            dot={false}
+          />
           <Tooltip
             animationEasing="ease-out"
             content={<CustomTooltip payload={dataChart} />}
             wrapperStyle={{ outline: "none" }}
+          />
+          <Tooltip
+          offset={100}
           />
         </LineChart>
       </ResponsiveContainer>
