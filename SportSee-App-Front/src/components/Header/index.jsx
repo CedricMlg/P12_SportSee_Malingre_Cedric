@@ -1,6 +1,10 @@
 import React from "react";
 import logo from "../../assets/logo.png";
 
+/**
+ * It returns a header element with a logo, and a nav element with a list of links.
+ * @returns A React component.
+ */
 function Header() {
   return (
     <header className="header">

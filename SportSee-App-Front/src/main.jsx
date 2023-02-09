@@ -9,7 +9,7 @@ import Profile from "./pages/Profile";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
-/* It's rendering the app. */
+/* Rendering the React app to the DOM. */
 root.render(
   <React.StrictMode>
     <Router>

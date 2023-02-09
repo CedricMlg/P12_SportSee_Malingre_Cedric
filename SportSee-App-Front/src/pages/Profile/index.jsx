@@ -10,6 +10,7 @@ import chicken from "../../assets/protein-icon.svg";
 import apple from "../../assets/carbs-icon.svg";
 import hamburger from "../../assets/fat-icon.svg";
 
+/* A function that is called when the page is loaded. */
 function Profile() {
   const [userData, setUserData] = useState({});
   const [userActivity, setUserActivity] = useState({});
@@ -19,6 +20,10 @@ function Profile() {
   const { id } = useParams();
 
   useEffect(() => {
+    /**
+     * If the environment variable is true, then set the state to the mock data, otherwise set the
+     * state to the data from the API.
+     */
     async function getUserDataLoad(id) {
       if (import.meta.env.VITE_APP_USEMOCK === "true") {
         const userData = new AppData().getUserDataMock(id);

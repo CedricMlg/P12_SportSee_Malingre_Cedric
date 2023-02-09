@@ -8,6 +8,11 @@ import {
 } from "recharts";
 import FormatChartData from "../../services/FormatChartData";
 
+/**
+ * It takes in an array of objects, formats the data, and then returns a RadarChart component from the
+ * react-vis library.
+ * @returns A React component.
+ */
 function PerformanceChart(data) {
   const dataChart = new FormatChartData().PerformanceFormattedData(data);
   return (

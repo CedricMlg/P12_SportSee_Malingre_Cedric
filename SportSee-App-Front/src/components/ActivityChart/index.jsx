@@ -10,6 +10,10 @@ import {
 } from "recharts";
 import FormatChartData from "../../services/FormatChartData";
 
+/**
+ * It takes in data, formats it, and then returns a bar chart with two bars, one for each data key.
+ * @returns A React component.
+ */
 function ActivityChart(data) {
   const dataChart = new FormatChartData().ActivityFormattedData(data);
   return (
@@ -75,6 +79,10 @@ function ActivityChart(data) {
   );
 }
 
+/**
+ * If the data.payload[0] is undefined, return null. Otherwise, return a div with two p tags.
+ * @returns A function that returns a component.
+ */
 function CustomTooltip(data) {
   if (data.payload[0] === undefined) {
     return null;

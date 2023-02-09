@@ -9,6 +9,13 @@ import {
 } from "recharts";
 import FormatChartData from "../../services/FormatChartData";
 
+/**
+ * It's a function that returns a div that contains a ResponsiveContainer that contains a LineChart
+ * that contains a defs that contains a linearGradient that contains two stops that contains a XAxis
+ * that contains a YAxis that contains a Line that contains a Tooltip that contains a CustomTooltip
+ * that contains a Tooltip.
+ * @returns A React component.
+ */
 function AverageSessionChart(data) {
   const dataChart = new FormatChartData().AverageSessionFormattedData(data);
   return (
@@ -36,15 +43,17 @@ function AverageSessionChart(data) {
             content={<CustomTooltip payload={dataChart} />}
             wrapperStyle={{ outline: "none" }}
           />
-          <Tooltip
-          offset={100}
-          />
+          <Tooltip offset={100} />
         </LineChart>
       </ResponsiveContainer>
     </div>
   );
 }
 
+/**
+ * If the data is undefined, return null. Otherwise, return a div with a paragraph inside.
+ * @returns A function that returns a component.
+ */
 function CustomTooltip(data) {
   if (data.payload[0] === undefined) {
     return null;

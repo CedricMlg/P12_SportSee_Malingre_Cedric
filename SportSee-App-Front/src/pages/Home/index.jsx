@@ -1,6 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+/**
+ * It returns a div with two NavLinks.
+ * @returns A React element.
+ */
 function Home() {
   return (
     <div className="home">

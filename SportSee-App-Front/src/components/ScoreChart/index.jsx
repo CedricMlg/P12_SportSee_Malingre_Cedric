@@ -2,6 +2,10 @@ import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import FormatChartData from "../../services/FormatChartData";
 
+/**
+ * It takes in a data object, formats it, and then returns a pie chart.
+ * @returns A React component.
+ */
 function ScoreChart(data) {
   const dataChart = new FormatChartData().ScoreFormattedData(data);
   return (
