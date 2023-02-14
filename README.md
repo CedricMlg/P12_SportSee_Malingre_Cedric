@@ -30,8 +30,8 @@ To get a local copy up and running follow these simple example steps.
    ```js
    yarn dev
    ```
-5. Open project
-6. <br />
+5. Open project 
+   <br />
    Click on the local link while pressing CTRL
    
 ### Switch between API and mock
