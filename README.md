@@ -1,8 +1,5 @@
 # P12_SportSee_Malingre_Cedric
 
-Once you're on the project and have installed yarn place yourself on SportSee-App-Front by typing " cd SportSee-App-Front/ " in your terminal,
-after doing so enter yarn in your terminal to download dependencies.
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
