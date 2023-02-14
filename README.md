@@ -40,9 +40,9 @@ The app can get data from the mock or the API, you can do the switch by going in
 
 Change the value of `VITE_APP_USEMOCK`, 
     <br />
-    true = data is obtained with the mock
+    true = data is obtained from the mock
     <br />
-    false = data is obtained with the API
+    false = data is obtained from the API
     
 ### WARNING
 # If you put true as a value you'll need to the back part of the app, to do so follow these steps
