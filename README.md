@@ -45,7 +45,7 @@ Change the value of `VITE_APP_USEMOCK`,
     false = data is obtained from the API
     
 ## WARNING
-### If you put true as a value you'll need to the back part of the app, to do so follow these steps
+### If you put true as a value you'll need to run the back part of the app, to do so follow these steps
 
 1. Place yourself on the back part of the project
    ```sh
