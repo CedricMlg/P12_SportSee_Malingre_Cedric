@@ -35,7 +35,7 @@ To get a local copy up and running follow these simple example steps.
    
 ### Switch between API and mock
    
-The app can get data from the mock or the API, you can do the switch by going into the .env file at `E:\OpenClassrooms\P12\P12_SportSee_Malingre_Cedric\SportSee-App-Front\.env`.
+The app can get data from the mock or the API, you can do the switch by going into the .env file at `P12_SportSee_Malingre_Cedric\SportSee-App-Front\.env`.
 
 Change the value of `VITE_APP_USEMOCK`, 
     true = data is obtained with the mock
