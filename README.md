@@ -31,6 +31,7 @@ To get a local copy up and running follow these simple example steps.
    yarn dev
    ```
 5. Open project
+6. <br />
    Click on the local link while pressing CTRL
    
 ### Switch between API and mock
@@ -38,7 +39,9 @@ To get a local copy up and running follow these simple example steps.
 The app can get data from the mock or the API, you can do the switch by going into the .env file at `P12_SportSee_Malingre_Cedric\SportSee-App-Front\.env`.
 
 Change the value of `VITE_APP_USEMOCK`, 
+    <br />
     true = data is obtained with the mock
+    <br />
     false = data is obtained with the API
     
 ### WARNING
