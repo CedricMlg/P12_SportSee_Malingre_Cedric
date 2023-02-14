@@ -15,7 +15,7 @@ import FormatChartData from "../../services/FormatChartData";
  * @returns A React component.
  */
 function ActivityChart(data) {
-  const dataChart = new FormatChartData().ActivityFormattedData(data);
+  const dataChart = new FormatChartData().activityFormattedData(data);
   return (
     <div className="activity-chart">
       <div className="activity-chart__text">

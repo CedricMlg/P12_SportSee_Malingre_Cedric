@@ -17,7 +17,7 @@ import FormatChartData from "../../services/FormatChartData";
  * @returns A React component.
  */
 function AverageSessionChart(data) {
-  const dataChart = new FormatChartData().AverageSessionFormattedData(data);
+  const dataChart = new FormatChartData().averageSessionFormattedData(data);
   return (
     <div className="line-chart">
       <p className="line-chart__text">Durée moyenne des sessions</p>

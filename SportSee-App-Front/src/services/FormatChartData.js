@@ -19,7 +19,7 @@ export default class FormatChartData {
    * @param data - The data object that is passed to the component.
    * @returns An array of objects with a value property.
    */
-  ScoreFormattedData(data) {
+  scoreFormattedData(data) {
     if (data.props.todayScore === undefined) {
       data.props.todayScore = data.props.score;
       delete data.props.score;
@@ -39,7 +39,7 @@ export default class FormatChartData {
    * @param data - {
    * @returns An array of objects.
    */
-  PerformanceFormattedData(data) {
+  performanceFormattedData(data) {
     const dataChart = [];
     data.props.data.map((perf) =>
       dataChart.push({
@@ -77,7 +77,7 @@ export default class FormatChartData {
    * @param data - {
    * @returns An array of objects.
    */
-  AverageSessionFormattedData(data) {
+  averageSessionFormattedData(data) {
     const dataChart = [];
     for (let i = 0; i < data.props.length; i++) {
       dataChart.push({
@@ -98,7 +98,7 @@ export default class FormatChartData {
    * @param data - {
    * @returns An array of objects.
    */
-  ActivityFormattedData(data) {
+  activityFormattedData(data) {
     const dataChart = [];
     for (let i = 0; i < data.props.length; i++) {
       dataChart.push({

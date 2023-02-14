@@ -7,7 +7,7 @@ import FormatChartData from "../../services/FormatChartData";
  * @returns A React component.
  */
 function ScoreChart(data) {
-  const dataChart = new FormatChartData().ScoreFormattedData(data);
+  const dataChart = new FormatChartData().scoreFormattedData(data);
   return (
     <div className="pie-chart">
       <p className="pie-chart__text">Score</p>

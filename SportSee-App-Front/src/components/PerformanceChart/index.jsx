@@ -14,7 +14,7 @@ import FormatChartData from "../../services/FormatChartData";
  * @returns A React component.
  */
 function PerformanceChart(data) {
-  const dataChart = new FormatChartData().PerformanceFormattedData(data);
+  const dataChart = new FormatChartData().performanceFormattedData(data);
   return (
     <div className="radar-chart">
       <ResponsiveContainer width="100%" height="100%">
