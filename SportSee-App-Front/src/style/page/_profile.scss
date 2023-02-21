@@ -8,6 +8,9 @@
   background-color: white;
   padding: 0 5%;
   width: auto;
+  &__loading {
+    padding: 50px 0;
+  }
   &__block {
     &-title {
       padding: 50px 0;

@@ -55,7 +55,7 @@ function Profile() {
   return (
     <div className="profile">
       {isLoading ? (
-        <p>Chargement des données</p>
+        <p className="profile__loading">Chargement des données</p>
       ) : (
         <>
           <div className="profile__block-title">
